@@ -82,6 +82,9 @@
                         // We can't use `triggerHandler` here because of dummy text/password inputs :(
                         setPlaceholder.call(element);
                     }
+                    setTimeout(function() {
+                        $element.blur().focus();
+                    }, 1);
                 } else if ($element.hasClass(settings.customClass)) {
                     clearPlaceholder.call(element, true, value) || (element.value = value);
                 } else {
